@@ -33,13 +33,15 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="0" Content="-999 С" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <Label Grid.Row="1" Content="-1 %" HorizontalAlignment="Center" VerticalAlignment="Center"  />
-                <Label Grid.Row="2" Content="-1 мм рт.ст." HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                <Label x:Name="TemperatureLabel" Grid.Row="0" Content="-999 С" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <Label x:Name="HumidityLabel" Grid.Row="1" Content="-1 %" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+
+
+                <Label x:Name="PressureLabel" Grid.Row="2" Content="-1 мм рт.ст." HorizontalAlignment="Center" VerticalAlignment="Center"  />
 
 
             </Grid>
-            <Button Content="Обновить принудительно" Grid.Column="2" Margin="10"/>
+            <Button x:Name="refreshButton" Content="Обновить принудительно" Grid.Column="2" Margin="10" Click="refreshButton_Click"/>
 
         </Grid>
     </Grid>

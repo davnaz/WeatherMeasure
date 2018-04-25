@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WeatherMeasure;
 
 namespace WeatherMeasure
 {
@@ -20,9 +21,24 @@ namespace WeatherMeasure
     /// </summary>
     public partial class MainWindow : Window
     {
+        WeatherData weatherData;
         public MainWindow()
         {
             InitializeComponent();
+            weatherData = new WeatherData();
+            weatherData.measurementsChanged += this.updateLabels;
+            weatherData.refreshData(false);
+        }
+        void updateLabels()
+        {
+            TemperatureLabel.Content = weatherData.getTemperature();
+            HumidityLabel.Content = weatherData.getHumidity();
+            PressureLabel.Content = weatherData.getPressure();
+        }
+
+        private void refreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            weatherData.refreshData(true);
         }
     }
 }
