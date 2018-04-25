@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WeatherMeasure"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="126" Width="683" SizeToContent="WidthAndHeight" MinWidth="683" MinHeight="170">
     <Grid>
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Content="Температура" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <Label Grid.Row="1" Content="Влажность" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                <Label Grid.Row="2" Content="Давление" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+
+
+            </Grid>
+            <Grid Grid.Column="1" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Content="-999 С" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <Label Grid.Row="1" Content="-1 %" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                <Label Grid.Row="2" Content="-1 мм рт.ст." HorizontalAlignment="Center" VerticalAlignment="Center"  />
+
+
+            </Grid>
+            <Button Content="Обновить принудительно" Grid.Column="2" Margin="10"/>
+
+        </Grid>
     </Grid>
 </Window>
